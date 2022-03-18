@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Entity;
 
+namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use PasswordAuthenticatedUserInterface;
 use UserInterface;
 
-
-#[ORM\Entity(repositoryClass: UserRepository::class)]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,7 +21,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $role = 'ROLE_USER';
+    private $role = 'Admin';
 
     public function getId(): ?int
     {
@@ -61,7 +59,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->role
         ];
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_Client,ROLE_Employer';
+        $roles[] = 'Admin';
 
         return array_unique($roles);
     }
