@@ -1,26 +1,24 @@
 <?php
 
+
 namespace App;
 
+
 use App\Controller\DefaultController;
-use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-class Kernel extends BaseKernel
+class WebApplication
 {
-    use MicroKernelTrait;
-
     const PATH_TO_TEMPLATES = __DIR__ . '/../templates';
+
     private $DefaultController;
 
-    public function construct()
+    public function __construct()
     {
         $twig = new Environment(new FilesystemLoader(self::PATH_TO_TEMPLATES));
         $this->DefaultController = new DefaultController ($twig);
     }
-
 
     public function run()
     {

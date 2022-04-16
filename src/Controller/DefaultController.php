@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+
+
     #[Route('/', name: 'default')]
     public function index(): Response
     {
@@ -16,4 +18,16 @@ class DefaultController extends AbstractController
 
         return $this->render($template, $argsArray);
     }
+
+    public function PostJob(): Response
+    {
+        $template = 'default/JobPost.twig';
+        $argsArray = [];
+
+        return $this->render($template, $argsArray);
+    }
+
+
+
+
 }

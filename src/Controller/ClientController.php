@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/client')]
 class ClientController extends AbstractController
 {
-    #[Route('/', name: 'student_index', methods: ['GET'])]
+    #[Route('/', name: 'client_index', methods: ['GET'])]
     public function index(ClientRepository $clientRepository): Response
     {
         return $this->render('client/index.html.twig', [

@@ -18,8 +18,9 @@ class Job
     #[ORM\Column(type: 'string', length: 255)]
     private $location;
 
-    #[ORM\OneToMany(mappedBy: 'job', targetEntity: Student::class)]
+    #[ORM\OneToMany(mappedBy: 'job', targetEntity: Client::class)]
     private $clients;
+
 
     public function __construct()
     {
