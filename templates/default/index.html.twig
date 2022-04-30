@@ -15,11 +15,12 @@
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<link href="" rel="stylesheet">
 		<style>
-
+			body {background-color: powderblue;}
 		</style>
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -28,18 +29,18 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<h1 class="logo">
 									<span class="fa fa-briefcase"></span> <span class="title">Job Agency Website</span>
-								</a>
+								</h1>
 
 							<!-- Nav -->
 								<nav>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
-										<li><a href="jobs.html">Find A Job</a></li>
-										<li><a href="#" >About</a></li>
-										<li><a href="../index.php?action=JobPost" >Post A Job</a></li>
-										<li><a href="#" >Upload CV</a></li>
+										<li><a href="/login">Login in</a></li>
+										<li><a href="{{ url('user_new') }}" >RegisterHERE!</a></li>
+										<li><a href="" >Post A Job</a></li>
+										<li><a href="" >Upload CV</a></li>
 
 										<li><a href="contact.html">Contact Us</a></li>
 
@@ -50,15 +51,7 @@
 					</header>
 
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html.twig" class="active">Home</a></li>
 
-
-						</ul>
-					</nav>
 
 				<!-- Main -->
 					<div id="main">
