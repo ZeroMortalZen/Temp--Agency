@@ -39,7 +39,7 @@ final class JobFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'location' => self::faker()->text(),
+            'job' => self::faker()->text(),
         ];
     }
 

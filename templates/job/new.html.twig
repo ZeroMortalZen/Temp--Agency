@@ -6,6 +6,7 @@
     <h1>Create new Job</h1>
 
     {{ include('job/_form.html.twig') }}
-
-    <a href="{{ path('job_index') }}">back to list</a>
+    {% if is_granted('ROLE_ADMIN')%}
+    <a class="btn btn-danger" href="{{ path('job_index') }}">Admin Job Menu</a>
+    {% endif %}
 {% endblock %}

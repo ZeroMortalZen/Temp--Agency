@@ -19,13 +19,7 @@ class DefaultController extends AbstractController
         return $this->render($template, $argsArray);
     }
 
-    public function PostJob(): Response
-    {
-        $template = 'default/JobPost.twig';
-        $argsArray = [];
 
-        return $this->render($template, $argsArray);
-    }
 
 
 

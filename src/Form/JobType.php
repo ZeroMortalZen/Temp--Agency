@@ -12,7 +12,8 @@ class JobType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('location')
+            ->add('CompanyName')
+            ->add('job')
         ;
     }
 

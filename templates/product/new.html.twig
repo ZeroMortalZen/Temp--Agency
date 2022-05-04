@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upload CV{% endblock %}
+
+{% block body %}
+    <h1>Upload Your CV</h1>
+    {{ form_start(form) }}
+    {# ... #}
+
+    {{ form_row(form.brochure) }}
+    {{ form_end(form) }}
+    <button class="btn btn-primary">SAVE</button>
+
+
+{% endblock %}

@@ -16,7 +16,11 @@ class Job
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $location;
+    private $job;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $companyName;
+
 
     #[ORM\OneToMany(mappedBy: 'job', targetEntity: Client::class)]
     private $clients;
@@ -31,23 +35,36 @@ class Job
     {
         return $this->id;
     }
-
-    public function getLocation(): ?string
+    public function  getCompanyName(): ?string
     {
-        return $this->location;
+        return  $this ->companyName;
     }
 
-    public function setLocation(string $location): self
+    public function  setCompanyName(string $companyName): self
     {
-        $this->location = $location;
+        $this->companyName =$companyName;
+        return $this;
+    }
+
+
+    public function getjob(): ?string
+    {
+        return $this->job;
+    }
+
+    public function setjob(string $job): self
+    {
+        $this->job = $job;
 
         return $this;
     }
 
     public function __toString(): string
     {
-        return $this->location;
+        return $this->job;
     }
+
+
 
     /**
      * @return Collection|Client[]
@@ -61,7 +78,7 @@ class Job
     {
         if (!$this->clients->contains($client)) {
             $this->clients[] = $client;
-            $client->setCampus($this);
+            $client->setjob($this);
         }
 
         return $this;

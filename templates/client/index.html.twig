@@ -3,6 +3,7 @@
 {% block title %}Student index{% endblock %}
 
 {% block body %}
+    {% if is_granted('ROLE_ADMIN')%}
     <h1>Clients index</h1>
 
     <table class="table">
@@ -38,5 +39,47 @@
         {% endfor %}
         </tbody>
     </table>
+    {% endif %}
+    <table class="table">
+    {% if app.user.role =="Employee" or app.user.role =="Employer"  %}
+        <a>Debug Client</a>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Age</th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+
+            {% if client.id == app.user.id %}
+
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.age }}</td>
+                <td>{{ client.name }}</td>
+                <td>
+                    <a href="{{ path('job_show', {'id': client.job.id})  }}">
+                        {{ client.job }}
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-success">Applied</a>
+
+                </td>
+            </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+        </table>
+    {% endif %}
 
 {% endblock %}

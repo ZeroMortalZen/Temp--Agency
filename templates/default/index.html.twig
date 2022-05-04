@@ -14,11 +14,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<link href="" rel="stylesheet">
-		<style>
-			body {background-color: powderblue;}
-		</style>
+
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
+	<style>
+		body {background-color: powderblue;}
+		#otis li {
+			list-style-type: none;
+		}
+	</style>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -35,17 +39,20 @@
 
 							<!-- Nav -->
 								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-										<li><a href="/login">Login in</a></li>
-										<li><a href="{{ url('user_new') }}" >RegisterHERE!</a></li>
-										<li><a href="" >Post A Job</a></li>
-										<li><a href="" >Upload CV</a></li>
 
-										<li><a href="contact.html">Contact Us</a></li>
+									<ul id="otis">
+										<div class="d-flex w-100 justify-content-between">
+										<li><a href="{{ url('job_index') }}" class="list-group-item list-group-item-action flex-column align-items-start active">Check Available Jobs</a></li>
 
+										<!--if statement for role Employer--->
+
+										<li><a href="{{url('job_new')}}" class="list-group-item list-group-item-action flex-column align-items-start active">Post A Job</a></li>
+										<!--if statement for role client--->
+										<li><a href="{{ url('client_new') }}" class="list-group-item list-group-item-action flex-column align-items-start active" >Apply For Job</a></li>
+										</div>
 									</ul>
 								</nav>
+
 
 						</div>
 					</header>
@@ -92,34 +99,6 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Contact Us</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-
-										<div class="field half">
-											<input type="text" name="email" id="email" placeholder="Email" />
-										</div>
-
-										<div class="field">
-											<input type="text" name="subject" id="subject" placeholder="Subject" />
-										</div>
-
-										<div class="field">
-											<textarea name="message" id="message" rows="3" placeholder="Notes"></textarea>
-										</div>
-
-										<div class="field text-right">
-											<label>&nbsp;</label>
-
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="primary" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
 							</section>
 							<section>
 

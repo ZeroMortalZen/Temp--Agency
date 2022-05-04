@@ -23,7 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $role = 'ROLE_USER';
+    private $role = 'Enter Your Role';
 
     public function getId(): ?int
     {
@@ -61,7 +61,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->role
         ];
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_Client,ROLE_Employer';
+        $roles[] = 'Client,Employer';
 
         return array_unique($roles);
     }
